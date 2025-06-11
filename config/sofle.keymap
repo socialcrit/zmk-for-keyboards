@@ -54,13 +54,18 @@
         };
 
         rightClick {
-            bindings = <&mkp MB2>;
+            bindings = <&mkp RCLK>;
             key-positions = <27 26>;
         };
 
-        doubleClick {
-            bindings = <&DoubleClick>;
+        MiddleClick {
+            bindings = <&mkp MCLK>;
             key-positions = <26 27 28>;
+        };
+
+        DoubleClick {
+            bindings = <&DoubleClick>;
+            key-positions = <26 27 28 25>;
         };
     };
 
@@ -107,7 +112,7 @@
 &kp TAB         &kp Q   &kp W     &kp E     &kp R    &kp T                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp ENTER
 &kp LEFT_SHIFT  &kp A   &kp S     &kp D     &lt 2 F  &kp G                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X     &kp C     &kp V    &kp B                 &kp C_MUTE    &kp C_MUTE  &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                        &kp LGUI  &kp LALT  &sl 3    &ClickHold MB3 SPACE  &mo 1         &none       &kp SPACE  &kp RCTRL  &kp RALT   &kp RGUI
+                        &kp LGUI  &kp LALT  &to 3    &ClickHold MB3 SPACE  &mo 1         &none       &kp SPACE  &kp RCTRL  &kp RALT   &kp RGUI
             >;
 
             sensor-bindings =
@@ -125,11 +130,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans  &kp KP_NUMLOCK       &kp SLASH        &kp ASTERISK     &kp MINUS     &kp EQUAL
-&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12                    &trans  &kp KP_NUMBER_7      &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &trans
-&trans  &trans  &trans  &trans   &trans   &trans                     &trans  &kp LS(KP_NUMBER_4)  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ENTER  &trans
-&trans  &trans  &trans  &trans   &trans   &trans   &trans    &trans  &trans  &kp KP_N1            &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER  &trans
-                &trans  &trans   &trans   &trans   &trans    &trans  &trans  &kp KP_N0            &kp KP_N0        &kp PERIOD
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans  &kp KP_NUMLOCK   &kp SLASH        &kp ASTERISK     &kp MINUS     &kp EQUAL
+&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12                    &trans  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &trans
+&trans  &trans  &trans  &trans   &trans   &trans                     &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ENTER  &trans
+&trans  &trans  &trans  &trans   &trans   &trans   &trans    &trans  &trans  &kp KP_N1        &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER  &trans
+                &trans  &trans   &trans   &trans   &trans    &trans  &trans  &kp KP_N0        &kp KP_N0        &kp PERIOD
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -162,7 +167,7 @@
 &none  &kp F17       &kp F3                 &kp F14       &kp F13                &none                             &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
 &none  &kp F18       &DoubleClick           &mkp MB2      &mkp MB1               &msc SCRL_UP                      &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
 &none  &kp F16       &kp DELETE             &kp UP_ARROW  &kp BACKSPACE          &msc SCRL_DOWN  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                     &mt LC(LS(LEFT)) LEFT  &kp DOWN      &ClickHold MCLK RIGHT  &kp LCTRL       &sl 0     &trans  &trans     &trans    &trans    &trans
+                     &mt LC(LS(LEFT)) LEFT  &kp DOWN      &ClickHold MCLK RIGHT  &kp LCTRL       &to 0     &trans  &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings =
