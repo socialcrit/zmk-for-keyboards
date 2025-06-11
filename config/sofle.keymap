@@ -147,7 +147,7 @@
 &none   &none      &kp LC(ENTER)    &kp LC(L)      &none         &kp C_PIP                         &trans     &trans    &trans    &trans     &trans   &trans
 &trans  &kp LC(W)  &kp LC(LS(T))    &kp LC(T)      &trans        &trans                            &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
 &none   &kp PG_UP  &kp LC(LS(TAB))  &kp LC(TAB)    &trans        &none                             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&none   &kp PG_DN  &kp K_BACK       &kp K_FORWARD  &none         &trans          &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
+&none   &kp PG_DN  &kp LA(LEFT)     &kp LA(RIGHT)  &none         &trans          &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
                    &kp HOME         &kp END        &msc SCRL_UP  &msc SCRL_DOWN  &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
