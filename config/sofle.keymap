@@ -151,11 +151,11 @@
 
         Mouse {
             bindings = <
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp N5        &kp NUMBER_3   &trans                            &trans     &trans    &trans    &trans     &trans   &trans
-&trans  &trans        &kp F3        &kp F14       &kp F13        &trans                            &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
-&trans  &DoubleClick  &mkp MB3      &mkp MB2      &mkp MB1       &msc SCRL_UP                      &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans  &kp K_UNDO    &kp DELETE    &kp UP_ARROW  &kp BACKSPACE  &msc SCRL_DOWN  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                      &kp LEFT      &kp DOWN      &kp RIGHT      &kp LCTRL       &sl 0     &trans  &trans     &trans    &trans    &trans
+&none  &kp NUMBER_1  &kp NUMBER_2           &kp N5        &kp NUMBER_3           &none                             &trans     &trans    &trans    &trans     &trans   &trans
+&none  &kp F17       &kp F3                 &kp F14       &kp F13                &none                             &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
+&none  &kp F18       &DoubleClick           &mkp MB2      &mkp MB1               &msc SCRL_UP                      &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&none  &kp F16       &kp DELETE             &kp UP_ARROW  &kp BACKSPACE          &msc SCRL_DOWN  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
+                     &mt LC(LS(LEFT)) LEFT  &kp DOWN      &ClickHold MCLK RIGHT  &kp LCTRL       &sl 0     &trans  &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings =
