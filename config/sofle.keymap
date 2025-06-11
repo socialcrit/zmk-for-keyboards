@@ -73,6 +73,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        clickClick: clickClick {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CLICKCLICK";
+            bindings = <&mkp>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -143,7 +152,7 @@
         Mouse {
             bindings = <
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp N5        &kp NUMBER_3   &trans                            &trans     &trans    &trans    &trans     &trans   &trans
-&trans  &trans        &kp F13       &kp F14       &kp F3         &trans                            &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
+&trans  &trans        &kp F3        &kp F14       &kp F13        &trans                            &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
 &trans  &DoubleClick  &mkp MB3      &mkp MB2      &mkp MB1       &msc SCRL_UP                      &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
 &trans  &kp K_UNDO    &kp DELETE    &kp UP_ARROW  &kp BACKSPACE  &msc SCRL_DOWN  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
                       &kp LEFT      &kp DOWN      &kp RIGHT      &kp LCTRL       &sl 0     &trans  &trans     &trans    &trans    &trans
