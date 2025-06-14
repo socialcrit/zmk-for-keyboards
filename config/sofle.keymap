@@ -76,7 +76,7 @@
             bindings = <&mkp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
 
         clickClick: clickClick {
@@ -108,19 +108,19 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC         &kp N1  &kp N2    &kp N3    &kp N4   &kp N5                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BACKSPACE
-&kp TAB         &kp Q   &kp W     &kp E     &kp R    &kp T                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp ENTER
-&kp LEFT_SHIFT  &kp A   &kp S     &kp D     &lt 2 F  &kp G                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LCTRL       &kp Z   &kp X     &kp C     &kp V    &kp B                 &kp C_MUTE    &kp C_MUTE  &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                        &kp LGUI  &kp LALT  &to 3    &ClickHold MB3 SPACE  &mo 1         &none       &kp SPACE  &kp RCTRL  &kp RALT   &kp RGUI
+&kp ESC         &kp N1  &kp N2        &kp N3    &kp N4   &kp N5                                                   &kp N6     &kp N7         &kp N8      &mt N9 MINUS  &mt N0 EQUAL  &kp MINUS
+&kp TAB         &kp Q   &kp W         &kp E     &kp R    &kp T                                                    &kp Y      &kp U          &kp I       &kp O         &kp P         &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A   &kp S         &kp D     &lt 2 F  &lt 5 G                                                  &kp H      &kp J          &kp K       &kp L         &kp SEMI      &kp ENTER
+&kp LCTRL       &kp Z   &kp X         &kp C     &kp V    &kp B                 &lt 4 C_PLAY_PAUSE    &kp C_MUTE   &kp N      &kp M          &kp COMMA   &kp DOT       &kp FSLH      &kp SQT
+                        &kp LEFT_GUI  &kp LALT  &to 3    &ClickHold MB3 SPACE  &lt 1 ENTER           &lt 3 ENTER  &kp SPACE  &kp BACKSPACE  &kp DELETE  &kp RGUI
             >;
 
             sensor-bindings =
-                <&EncoderScroll>,
+                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>,
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        lower_layer {
+        NumPad {
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
             // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
@@ -149,19 +149,19 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none   &none      &kp LC(ENTER)    &kp LC(L)      &none         &kp C_PIP                         &trans     &trans    &trans    &trans     &trans   &trans
-&trans  &kp LC(W)  &kp LC(LS(T))    &kp LC(T)      &trans        &trans                            &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
-&none   &kp PG_UP  &kp LC(LS(TAB))  &kp LC(TAB)    &trans        &none                             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&none   &kp PG_DN  &kp LA(LEFT)     &kp LA(RIGHT)  &none         &trans          &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                   &kp HOME         &kp END        &msc SCRL_UP  &msc SCRL_DOWN  &trans    &trans  &trans     &trans    &trans    &trans
+&none      &none      &kp LC(ENTER)    &kp LC(L)      &none         &kp C_PIP                         &trans     &trans    &trans    &trans     &trans   &trans
+&trans     &kp LC(W)  &kp LC(LS(T))    &kp LC(T)      &trans        &trans                            &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp N0   &trans
+&none      &kp PG_UP  &kp LC(LS(TAB))  &kp LC(TAB)    &trans        &none                             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&kp LCTRL  &kp PG_DN  &kp LA(LEFT)     &kp LA(RIGHT)  &none         &trans          &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
+                      &kp HOME         &kp END        &msc SCRL_UP  &msc SCRL_DOWN  &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings =
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>,
+                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>,
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        Mouse {
+        Radiology {
             bindings = <
 &none  &kp NUMBER_1  &kp NUMBER_2           &kp N5        &kp NUMBER_3           &none                             &trans     &trans    &trans    &trans     &trans   &trans
 &none  &kp F17       &kp F3                 &kp F14       &kp F13                &none                             &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &trans
@@ -175,7 +175,7 @@
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        extra1 {
+        Bluetooth {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -194,7 +194,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        extra2 {
+        Media {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -203,14 +203,14 @@
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                     &none  &none  &none  &none  &none  &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                  &none  &none  &none  &none  &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                            &none  &none  &none  &none  &none  &none
-&none              &none            &none            &none            &none            &none            &none    &none  &none  &none  &none  &none  &none  &none
-                                    &none            &none            &none            &none            &none    &none  &none  &none  &none  &none
+&none  &none  &none       &none             &none            &none                                          &none  &none  &none  &none  &none  &none
+&none  &none  &kp C_MUTE  &kp C_VOL_UP      &kp C_VOL_DN     &none                                          &none  &none  &none  &none  &none  &none
+&none  &none  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT       &none                                          &none  &none  &none  &none  &none  &none
+&none  &none  &none       &kp C_REWIND      &kp C_FF         &none              &none                &none  &none  &none  &none  &none  &none  &none
+              &none       &none             &kp C_MEDIA_WWW  &kp LA(LC(LG(Z)))  &kp LA(LC(LG(X)))    &none  &none  &none  &none  &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         extra3 {
@@ -228,8 +228,6 @@
 &none              &none            &none            &none            &none            &none            &none    &none  &none  &none  &none  &none  &none  &none
                                     &none            &none            &none            &none            &none    &none  &none  &none  &none  &none
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         extra4 {
@@ -247,8 +245,6 @@
 &none              &none            &none            &none            &none            &none            &none    &none  &none  &none  &none  &none  &none  &none
                                     &none            &none            &none            &none            &none    &none  &none  &none  &none  &none
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
