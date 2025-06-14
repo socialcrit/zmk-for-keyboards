@@ -123,8 +123,8 @@
             >;
 
             sensor-bindings =
-                <&EncoderScroll2 SCRL_UP SCRL_DOWN>,
-                <&EncoderScroll>;
+                <&inc_dec_kp C_VOLUME_UP C_VOL_DN>,
+                <&EncoderScroll2 SCRL_UP SCRL_DOWN>;
         };
 
         NumPadMouse {
