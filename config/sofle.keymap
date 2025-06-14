@@ -115,16 +115,16 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC         &kp N1  &kp N2            &kp N3    &kp N4   &kp N5                                                   &kp N6     &kp N7         &kp N8      &kp N9    &mt N0 EQUAL  &kp MINUS
-&kp TAB         &kp Q   &kp W             &kp E     &kp R    &kp T                                                    &kp Y      &kp U          &kp I       &kp O     &kp P         &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A   &kp S             &kp D     &lt 2 F  &lt 5 G                                                  &kp H      &kp J          &kp K       &kp L     &kp SEMI      &kp ENTER
-&kp LCTRL       &kp Z   &kp X             &kp C     &kp V    &kp B                 &lt 4 C_PLAY_PAUSE    &kp C_MUTE   &kp N      &kp M          &kp COMMA   &kp DOT   &kp FSLH      &kp SQT
-                        &kp LEFT_COMMAND  &kp LALT  &to 3    &ClickHold MB3 SPACE  &lt 1 ENTER           &lt 3 ENTER  &kp SPACE  &kp BACKSPACE  &kp DELETE  &kp RGUI
+&kp ESC         &kp N1  &kp N2    &kp N3    &kp N4   &kp N5                                                   &kp N6     &kp N7         &kp N8      &kp N9    &mt N0 EQUAL  &kp MINUS
+&kp TAB         &kp Q   &kp W     &kp E     &kp R    &kp T                                                    &kp Y      &kp U          &kp I       &kp O     &kp P         &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A   &kp S     &kp D     &lt 2 F  &lt 5 G                                                  &kp H      &kp J          &kp K       &kp L     &kp SEMI      &kp ENTER
+&kp LCTRL       &kp Z   &kp X     &kp C     &kp V    &kp B                 &lt 4 C_PLAY_PAUSE    &kp C_MUTE   &kp N      &kp M          &kp COMMA   &kp DOT   &kp FSLH      &kp SQT
+                        &kp LWIN  &kp LALT  &to 3    &ClickHold MB3 SPACE  &lt 1 ENTER           &lt 3 ENTER  &kp SPACE  &kp BACKSPACE  &kp DELETE  &kp RGUI
             >;
 
             sensor-bindings =
                 <&EncoderScroll2 SCRL_UP SCRL_DOWN>,
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+                <&EncoderScroll>;
         };
 
         NumPadMouse {
