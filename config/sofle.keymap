@@ -16,6 +16,12 @@
 #define RAISE 2
 #define ADJUST 3
 
+&inc_dec_kp {
+    bindings = <&msc>, <&msc>;
+
+    tap-ms = <5>;
+};
+
 / {
     // Activate ADJUST layer by pressing raise and lower
 
@@ -131,16 +137,16 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC         &kp N1  &kp N2         &kp N3    &kp N4               &kp N5                                                   &kp N6     &kp N7         &kp N8      &kp N9    &mt MINUS N0  &kp EQUAL
-&kp TAB         &kp Q   &kp W          &kp E     &kp R                &kp T                                                    &kp Y      &kp U          &kp I       &kp O     &kp P         &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A   &kp S          &kp D     &lt 2 F              &lt 5 G                                                  &kp H      &kp J          &kp K       &kp L     &kp SEMI      &kp ENTER
-&kp LCTRL       &kp Z   &kp X          &kp C     &kp V                &kp B                 &lt 4 C_PLAY_PAUSE    &kp C_MUTE   &kp N      &kp M          &kp COMMA   &kp DOT   &kp FSLH      &kp SQT
-                        &kp RIGHT_GUI  &kp LALT  &ToLayerTap 3 SPACE  &ClickHold MB3 SPACE  &lt 1 ENTER           &lt 3 ENTER  &kp SPACE  &kp BACKSPACE  &kp DELETE  &kp RGUI
+&kp ESC         &kp N1  &kp N2         &kp N3    &kp N4               &kp N5                                                   &kp N6     &kp N7     &kp N8         &kp N9    &mt MINUS N0  &kp EQUAL
+&kp TAB         &kp Q   &kp W          &kp E     &kp R                &kp T                                                    &kp Y      &kp U      &kp I          &kp O     &kp P         &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A   &kp S          &kp D     &lt 2 F              &lt 5 G                                                  &kp H      &kp J      &kp K          &kp L     &kp SEMI      &kp ENTER
+&kp LCTRL       &kp Z   &kp X          &kp C     &kp V                &kp B                 &lt 4 C_PLAY_PAUSE    &kp C_MUTE   &kp N      &kp M      &kp COMMA      &kp DOT   &kp FSLH      &kp SQT
+                        &kp RIGHT_GUI  &kp LALT  &ToLayerTap 3 SPACE  &ClickHold MB3 SPACE  &lt 1 ENTER           &lt 3 ENTER  &kp SPACE  &kp SPACE  &kp BACKSPACE  &kp RGUI
             >;
 
             sensor-bindings =
                 <&EncoderScroll>,
-                <&EncoderScroll2 SCRL_UP SCRL_DOWN>;
+                <&inc_dec_kp C_VOL_DN C_VOLUME_UP>;
         };
 
         NumPadMouse {
