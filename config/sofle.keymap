@@ -106,6 +106,7 @@
             label = "ENCODERSCROLL";
             #sensor-binding-cells = <0>;
             bindings = <&msc MOVE_Y(72)>, <&msc MOVE_Y(-72)>;
+
             tap-ms = <20>;
         };
 
@@ -134,6 +135,15 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        EncoderVol: EncoderVol {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODERVOL";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_VOL_DN>;
+
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -148,16 +158,14 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC         &kp N1  &kp N2        &kp N3    &kp N4               &KPMacro 0 N5                                            &kp N6       &kp N7       &kp N8         &kp N9    &mt MINUS N0  &kp EQUAL
-&kp TAB         &kp Q   &kp W         &kp E     &kp R                &kp T                                                    &kp Y        &kp U        &kp I          &kp O     &kp P         &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A   &kp S         &kp D     &lt 2 F              &lt 5 G                                                  &kp H        &kp J        &kp K          &kp L     &kp SEMI      &kp SQT
-&kp LCTRL       &kp Z   &kp X         &kp C     &kp V                &lt 6 B               &lt 4 C_PLAY_PAUSE    &kp C_MUTE   &kp N        &kp M        &kp COMMA      &kp DOT   &kp FSLH      &kp RETURN
-                        &kp LEFT_GUI  &kp LALT  &ToLayerTap 3 SPACE  &ClickHold MB3 SPACE  &lt 1 ENTER           &lt 3 ENTER  &lt 1 SPACE  &lt 2 SPACE  &kp BACKSPACE  &kp RGUI
+&kp ESC         &kp N1   &kp N2        &kp N3    &kp N4               &KPMacro 0 N5                                            &kp N6       &kp N7       &kp N8         &kp N9    &mt MINUS N0  &kp EQUAL
+&kp TAB         &kp Q    &kp W         &kp E     &kp R                &kp T                                                    &kp Y        &kp U        &kp I          &kp O     &kp P         &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A    &kp S         &kp D     &lt 2 F              &lt 5 G                                                  &kp H        &kp J        &kp K          &kp L     &kp SEMI      &kp SQT
+&kp LCTRL       &lt 4 Z  &kp X         &kp C     &kp V                &lt 6 B               &lt 4 C_PLAY_PAUSE    &kp C_MUTE   &kp N        &kp M        &kp COMMA      &kp DOT   &kp FSLH      &kp RETURN
+                         &kp LEFT_GUI  &kp LALT  &ToLayerTap 3 SPACE  &ClickHold MB3 SPACE  &lt 1 ENTER           &lt 3 ENTER  &lt 1 SPACE  &lt 2 SPACE  &kp BACKSPACE  &kp RGUI
             >;
 
-            sensor-bindings =
-                <&EncoderScroll>,
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+            sensor-bindings = <&EncoderScroll>, <&EncoderVol>;
         };
 
         NumPadMouseFunction {
