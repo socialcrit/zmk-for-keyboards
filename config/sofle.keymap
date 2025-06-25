@@ -80,6 +80,11 @@
             bindings = <&DoubleClick>;
             key-positions = <26 27 28 25>;
         };
+
+        BTCLEAR {
+            bindings = <&bt BT_CLR>;
+            key-positions = <1 2 3 4 54>;
+        };
     };
 
     behaviors {
