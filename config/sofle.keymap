@@ -145,7 +145,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODERVOL";
             #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOLUME_UP>, <&kp C_VOL_DN>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
 
             tap-ms = <20>;
         };
@@ -202,11 +202,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none      &none      &kp LC(ENTER)    &kp LC(L)      &none             &kp C_PIP                          &trans     &trans    &trans    &trans     &trans   &trans
-&trans     &kp LC(W)  &kp LC(LS(T))    &kp LC(T)      &trans            &trans                             &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp N0   &trans
-&none      &kp PG_UP  &kp LC(LS(TAB))  &kp LC(TAB)    &trans            &none                              &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&kp LCTRL  &kp PG_DN  &kp LA(LEFT)     &kp LA(RIGHT)  &none             &trans           &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                      &kp HOME         &kp END        &msc MOVE_Y(-20)  &msc MOVE_Y(20)  &trans    &trans  &trans     &trans    &trans    &trans
+&none      &none      &kp LC(ENTER)    &kp LC(L)      &none            &kp C_PIP                           &trans     &trans    &trans    &trans     &trans   &trans
+&trans     &kp LC(W)  &kp LC(LS(T))    &kp LC(T)      &trans           &trans                              &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp N0   &trans
+&none      &kp PG_UP  &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &none                               &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&kp LCTRL  &kp PG_DN  &kp LA(LEFT)     &kp LA(RIGHT)  &none            &trans            &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
+                      &kp HOME         &kp END        &msc MOVE_Y(20)  &msc MOVE_Y(-20)  &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings =
