@@ -86,7 +86,7 @@
             layers = <0>;
         };
 
-        MB4 {
+        mouseFour {
             bindings = <&mkp MB4>;
             key-positions = <54 53 52 52>;
             layers = <0>;
