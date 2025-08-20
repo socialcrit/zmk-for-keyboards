@@ -5,11 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/rgb.h>
 
 #define BASE 0
 #define LOWER 1
@@ -242,7 +239,7 @@
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        extra4 {
+        Mouse {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -251,11 +248,11 @@
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &none  &none         &none         &mkp MB4                   &mkp MB4   &none         &none         &none  &none  &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &none  &none         &mkp RCLK     &mkp LCLK                  &mkp LCLK  &mkp RCLK     &none         &none  &none  &none
-&none              &rgb_ug RGB_BRD  &none  &mkp MCLK     &none         &none                      &none      &none         &mkp MCLK     &none  &none  &none
-&none              &none            &none  &DoubleClick  &DoubleClick  &none      &to 0    &to 0  &none      &DoubleClick  &DoubleClick  &none  &none  &none
-                                    &none  &none         &none         &none      &to 0    &to 0  &none      &none         &none         &none
+&none  &none  &none  &none         &none         &mkp MB4                   &mkp MB4   &none         &none         &none  &none  &none
+&none  &none  &none  &none         &mkp RCLK     &mkp LCLK                  &mkp LCLK  &mkp RCLK     &none         &none  &none  &none
+&none  &none  &none  &mkp MCLK     &none         &none                      &none      &none         &mkp MCLK     &none  &none  &none
+&none  &none  &none  &DoubleClick  &DoubleClick  &none      &to 0    &to 0  &none      &DoubleClick  &DoubleClick  &none  &none  &none
+              &none  &none         &none         &none      &to 0    &to 0  &none      &none         &none         &none
             >;
         };
 
